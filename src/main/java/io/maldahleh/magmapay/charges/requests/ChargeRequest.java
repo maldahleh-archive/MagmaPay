@@ -1,9 +1,12 @@
-package io.maldahleh.magmapay.gateways.requests;
+package io.maldahleh.magmapay.charges.requests;
+
+import io.maldahleh.magmapay.gateways.Gateway;
 
 import org.bukkit.entity.Player;
 
 public class ChargeRequest {
     private Player player;
+    private Gateway gateway;
 
     private double amountToCharge;
     private String isoCurrency;
@@ -14,8 +17,9 @@ public class ChargeRequest {
 
     private String providedPin;
 
-    ChargeRequest(Player player, double amountToCharge, String isoCurrency) {
+    ChargeRequest(Player player, Gateway gateway, double amountToCharge, String isoCurrency) {
         this.player = player;
+        this.gateway = gateway;
         this.amountToCharge = amountToCharge;
         this.isoCurrency = isoCurrency;
 

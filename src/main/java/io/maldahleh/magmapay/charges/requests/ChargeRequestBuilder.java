@@ -1,12 +1,14 @@
-package io.maldahleh.magmapay.gateways.requests;
+package io.maldahleh.magmapay.charges.requests;
+
+import io.maldahleh.magmapay.gateways.Gateway;
 
 import org.bukkit.entity.Player;
 
 public class ChargeRequestBuilder {
     private ChargeRequest chargeRequest;
 
-    public ChargeRequestBuilder(Player player, double amountToCharge, String isoCurrency) {
-        chargeRequest = new ChargeRequest(player, amountToCharge, isoCurrency);
+    public ChargeRequestBuilder(Player player, Gateway gateway, double amountToCharge, String isoCurrency) {
+        chargeRequest = new ChargeRequest(player, gateway, amountToCharge, isoCurrency);
     }
 
     public ChargeRequestBuilder setChargeImmediately(boolean chargeImmediately) {

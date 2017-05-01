@@ -1,4 +1,4 @@
 package io.maldahleh.magmapay.gateways;
 
-public interface IGateway {
+public abstract class Gateway {
 }
