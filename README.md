@@ -1,1 +1,1 @@
-MagmaPay-Pro
+MagmaPay is an in-game payment implementation handler built on Spigot.

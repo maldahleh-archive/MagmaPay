@@ -1,7 +1,23 @@
 package io.maldahleh.magmapay;
 
-/**
- * Created by maldahleh on 2017-04-30.
- */
-public class MagmaPay {
+import org.bukkit.plugin.java.JavaPlugin;
+
+public class MagmaPay extends JavaPlugin {
+    private static MagmaPay magmaPay;
+
+    @Override
+    public void onEnable() {
+        getLogger().info("MagmaPay - Enabling...");
+        magmaPay = this;
+        getLogger().info("MagmaPay - Enabled.");
+    }
+
+    @Override
+    public void onDisable() {
+        getLogger().info("MagmaPay - Disabled...");
+        magmaPay = null;
+        getLogger().info("MagmaPay - Disabled.");
+    }
+
+    public static MagmaPay getInstance() { return magmaPay; }
 }

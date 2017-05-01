@@ -1,7 +1,6 @@
 package io.maldahleh.magmapay.gateways.implementations;
 
-/**
- * Created by maldahleh on 2017-04-30.
- */
-public class StripeGatewat {
+import io.maldahleh.magmapay.gateways.IGateway;
+
+public class StripeGateway implements IGateway {
 }
