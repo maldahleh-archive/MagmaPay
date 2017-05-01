@@ -23,4 +23,13 @@ public class ChargeRequestBuilder {
         chargeRequest.setStatementDescriptor(statementDescriptor);
         return this;
     }
+
+    public ChargeRequestBuilder setProvidedPin(String providedPin) {
+        chargeRequest.setProvidedPin(providedPin);
+        return this;
+    }
+
+    public ChargeRequest buildRequest() {
+        return chargeRequest;
+    }
 }
