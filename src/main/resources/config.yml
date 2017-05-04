@@ -1,4 +1,4 @@
 gateways:
   stripe:
     enabled: true
-    api-key: ''
+    access-data: ''

@@ -18,6 +18,6 @@ public class GatewayManager {
     }
 
     public Gateway getGatewayImplementation(AvailableGateway gateway) {
-            return gateways.getOrDefault(gateway, null);
+        return gateways.getOrDefault(gateway, null);
     }
 }
