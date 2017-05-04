@@ -1,14 +1,20 @@
 package io.maldahleh.magmapay;
 
+import io.maldahleh.magmapay.gateways.GatewayManager;
+
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class MagmaPay extends JavaPlugin {
     private static MagmaPay magmaPay;
 
+    private GatewayManager gatewayManager;
+
     @Override
     public void onEnable() {
         getLogger().info("MagmaPay - Enabling...");
         magmaPay = this;
+
+        gatewayManager = new GatewayManager(this);
         getLogger().info("MagmaPay - Enabled.");
     }
 
@@ -18,6 +24,8 @@ public class MagmaPay extends JavaPlugin {
         magmaPay = null;
         getLogger().info("MagmaPay - Disabled.");
     }
+
+    public GatewayManager getGatewayManager() { return gatewayManager; }
 
     public static MagmaPay getInstance() { return magmaPay; }
 }
