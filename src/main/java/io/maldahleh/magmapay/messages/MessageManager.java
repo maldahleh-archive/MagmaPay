@@ -42,4 +42,15 @@ public class MessageManager {
     public MessageStore getMessageStore(AvailableGateway gateway) {
         return messageStoreMap.getOrDefault(gateway, null);
     }
+
+    /**
+     * Get the specified gateway message.
+     *
+     * @param gateway the gateway which the message will be retrieved for
+     * @param messageEnum the message of the gateway that will be retrieved
+     * @return the message specified
+     */
+    public String getMessage(AvailableGateway gateway, Enum messageEnum) {
+        return getMessageStore(gateway).getMessage(messageEnum);
+    }
 }

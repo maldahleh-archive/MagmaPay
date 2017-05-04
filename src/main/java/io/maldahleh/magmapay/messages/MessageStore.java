@@ -9,5 +9,5 @@ public class MessageStore {
 
     public void registerMessage(Enum key, String message) { messageMap.put(key, message); }
 
-    public void getMessage(Enum message) { messageMap.getOrDefault(message, null); }
+    public String getMessage(Enum message) { return messageMap.getOrDefault(message, null); }
 }
