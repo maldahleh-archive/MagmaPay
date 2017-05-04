@@ -1,5 +1,6 @@
 package io.maldahleh.magmapay;
 
+import io.maldahleh.magmapay.api.MagmaPayAPI;
 import io.maldahleh.magmapay.config.MPConfig;
 import io.maldahleh.magmapay.gateways.GatewayManager;
 
@@ -11,6 +12,8 @@ public class MagmaPay extends JavaPlugin {
     private MPConfig mpConfig;
     private GatewayManager gatewayManager;
 
+    private MagmaPayAPI magmaPayAPI;
+
     @Override
     public void onEnable() {
         getLogger().info("MagmaPay - Enabling...");
@@ -18,6 +21,8 @@ public class MagmaPay extends JavaPlugin {
 
         gatewayManager = new GatewayManager(this);
         mpConfig = new MPConfig(this);
+
+        magmaPayAPI = new MagmaPayAPI(this);
         getLogger().info("MagmaPay - Enabled.");
     }
 
@@ -27,6 +32,8 @@ public class MagmaPay extends JavaPlugin {
         magmaPay = null;
         getLogger().info("MagmaPay - Disabled.");
     }
+
+    public MagmaPayAPI getAPI() { return magmaPayAPI; }
 
     public MPConfig getMpConfig() { return mpConfig; }
 
