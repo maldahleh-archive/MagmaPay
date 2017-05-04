@@ -10,5 +10,4 @@ public class StripeGateway extends Gateway {
         Stripe.apiKey = apiKey;
     }
 
-
 }
