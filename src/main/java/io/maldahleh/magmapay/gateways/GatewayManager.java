@@ -3,13 +3,17 @@ package io.maldahleh.magmapay.gateways;
 import io.maldahleh.magmapay.MagmaPay;
 
 import java.util.HashMap;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 public class GatewayManager {
     private MagmaPay magmaPay;
+    private ExecutorService executorService;
     private HashMap<AvailableGateway, Gateway> gateways;
 
     public GatewayManager(MagmaPay magmaPay) {
         this.magmaPay = magmaPay;
+        this.executorService = Executors.newCachedThreadPool();
         this.gateways = new HashMap<>();
     }
 

@@ -6,10 +6,10 @@ import io.maldahleh.magmapay.gateways.implementations.StripeGateway;
 
 import org.bukkit.configuration.file.FileConfiguration;
 
-public class MPConfig {
+public class ConfigManager {
     private MagmaPay magmaPay;
 
-    public MPConfig(MagmaPay magmaPay) {
+    public ConfigManager(MagmaPay magmaPay) {
         this.magmaPay = magmaPay;
 
         magmaPay.saveDefaultConfig();
